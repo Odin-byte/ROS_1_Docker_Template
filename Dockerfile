@@ -31,9 +31,15 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install custom dependencies
+<<<<<<< HEAD
 # RUN apt-get update && apt-get install --no-install-recommends -y \
 #     <YOUR_PACKAGE> \
 #     && rm -rf /var/lib/apt/lists/*
+=======
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    ros-$ROS_DISTRO-realsense2-camera \
+    && rm -rf /var/lib/apt/lists/*
+>>>>>>> fcb6415 (First version of ROS1 Template Docker)
 
 # RUN pip install \
 #     <YOUR_PACKAGE>
