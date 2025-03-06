@@ -33,6 +33,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 # Install custom dependencies
 RUN apt-get update && apt-get install --no-install-recommends -y \
     ros-$ROS_DISTRO-realsense2-camera \
+    ros-$ROS_DISTRO-realsense2-description \
     && rm -rf /var/lib/apt/lists/*
 
 # RUN pip install \
@@ -47,7 +48,7 @@ WORKDIR /home/${USER}/dependencies_ws/src
 
 # ARG CACHE_BUST
 # RUN git clone <linkToRepo> -b <branchName>
-RUN git clone https://github.com/IntelRealSense/realsense-ros.git -b ros1-legacy
+# RUN git clone https://github.com/IntelRealSense/realsense-ros.git -b ros1-legacy
 
 # Build dependencies_ws
 WORKDIR /home/${USER}/dependencies_ws
